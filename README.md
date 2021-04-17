@@ -59,3 +59,41 @@ Notation | Accepted | Rejected | Notes
 1.0.0-\* | 1.0.0-alpha, 1.0.0-beta | 1.0.0 | Excludes stable releases
 \*-\* | 1.0.0-alpha, 3.4.5-beta | 1.0.0 | Matches all pre-release versions
 
+### Commands
+
+#### nuclear list
+
+Lists package versions. Usage:
+
+```
+nuclear list <PACKAGE> [VERSIONS] [OPTIONS]
+```
+
+Arguments:
+
+* `PACKAGE` - The package ID whose versions should be listed.
+* `VERSIONS` - Optional. The version range that should be listed.
+
+Options:
+
+* `-s, --source` - The NuGet package source URL. Defaults to `https://api.nuget.org/v3/index.json`.
+* `-o, --output` - Set the output format. Allowed values are Allowed values are `tty`, or `json`.
+
+#### nuclear delete
+
+Delete package versions. Usage:
+
+```
+nuclear delete <PACKAGE> <VERSIONS> [OPTIONS]
+```
+
+Arguments:
+
+* `PACKAGE` - The package ID whose versions should be deleted.
+* `VERSIONS` - The version range that should be deleted.
+
+Options:
+
+* `-s, --source` - The NuGet package source URL. Defaults to `https://api.nuget.org/v3/index.json`.
+* `-k, --api-key` - The API key to authenticate on the package source.
+* `--dry-run` - Show what would be deleted.
