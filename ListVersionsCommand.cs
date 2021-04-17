@@ -22,7 +22,7 @@ namespace Nuclear
         public string PackageId {get; set; }
 
         [CommandArgument(1, "[VERSIONS]")]
-        [Description("The version range that should be listed.")]
+        [Description("Optional. Filters results using floating version notation.")]
         [TypeConverter(typeof(NuclearVersionRangeConverter))]
         public NuclearVersionRange VersionRange { get; set; }
 

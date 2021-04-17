@@ -38,7 +38,7 @@ You can create API keys on nuget.org using [this documentation](https://docs.mic
 
 ## Reference
 
-### Deleting vs unlisting?
+### Deleting vs unlisting
 
 NuGet servers are free to interpret "delete" operations. For example, [nuget.org unlists packages](https://docs.microsoft.com/nuget/nuget-org/policies/deleting-packages) to prevent the ["left-pad problem"](https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm). Unlisted packages are undiscoverable on nuget.org and may be re-listed in the future.
 
@@ -63,7 +63,7 @@ Notation | Accepted | Rejected | Notes
 
 #### nuclear list
 
-Lists package versions. Usage:
+Find package versions. Usage:
 
 ```
 nuclear list <PACKAGE> [VERSIONS] [OPTIONS]
@@ -72,7 +72,7 @@ nuclear list <PACKAGE> [VERSIONS] [OPTIONS]
 Arguments:
 
 * `PACKAGE` - The package ID whose versions should be listed.
-* `VERSIONS` - Optional. The version range that should be listed.
+* `VERSIONS` - Optional. Filters results using [floating version notation](#version-ranges).
 
 Options:
 
@@ -90,7 +90,7 @@ nuclear delete <PACKAGE> <VERSIONS> [OPTIONS]
 Arguments:
 
 * `PACKAGE` - The package ID whose versions should be deleted.
-* `VERSIONS` - The version range that should be deleted.
+* `VERSIONS` - The version range that should be deleted using [floating version notation](#version-ranges).
 
 Options:
 
