@@ -14,7 +14,7 @@ dotnet tool install --global nuget-clear --version 1.0.0-preview1
 
 ## Examples
 
-Let's find some versions of your package to delete:
+Let's find some versions of your package to delete on nuget.org:
 
 ```
 nuclear list My.Package
@@ -32,11 +32,17 @@ Let's nuke some packages! 🤯
 nuclear delete My.Package 2.0.0-* --api-key NUGET_API_KEY
 ```
 
-This [unlists](https://docs.microsoft.com/en-us/nuget/nuget-org/policies/deleting-packages) pre-releases of v2.0.0 of `My.Package` on nuget.org.
+This [unlists](https://docs.microsoft.com/nuget/nuget-org/policies/deleting-packages) pre-releases of `My.Package` v2.0.0 on nuget.org.
 
-You can create API keys on nuget.org using [this documentation](https://docs.microsoft.com/en-us/nuget/nuget-org/publish-a-package#create-api-keys). Make sure to select the `Unlist package` scope when creating your API key.
+You can create API keys on nuget.org using [this documentation](https://docs.microsoft.com/nuget/nuget-org/publish-a-package#create-api-keys). Make sure to select the `Unlist package` scope when creating your API key.
 
 ## Reference
+
+### Deleting vs unlisting?
+
+NuGet servers are free to interpret "delete" operations. For example, [nuget.org unlists packages](https://docs.microsoft.com/nuget/nuget-org/policies/deleting-packages) to prevent the ["left-pad problem"](https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm). Unlisted packages are undiscoverable on nuget.org and may be re-listed in the future.
+
+However, private NuGet servers like [BaGet can be configured to delete packages](https://loic-sharma.github.io/BaGet/configuration/#enable-package-hard-deletions). You may not be able to undo a package deletion, so be careful!
 
 ### Version ranges
 
