@@ -46,11 +46,11 @@ However, private NuGet servers like [BaGet can be configured to delete packages]
 
 ### Version ranges
 
-NuGet packages use [semantic versioning](https://semver.org/) and has the form `Major.Minor.Patch[-PreleaseLabel]`. Examples include `1.0.0` or `1.0.0-preview1`. A package is considered *pre-release* if it has a pre-release label, or *stable* otherwise.
+NuGet packages use [semantic versioning](https://semver.org/) which has the form `Major.Minor.Patch[-PreleaseLabel]`. A package is considered *pre-release* if it has a pre-release label, or *stable* otherwise. For example, version `1.0.0-preview` is a pre-release, but version `1.0.0` is stable.
 
 Nuclear supports floating notation. For example:
 
-Notation | Accepted | Rejected | Notes
+Version range | Matches | Ignores | Notes
 -- | -- | -- | --
 1.0.0 | 1.0.0 | 2.0.0 | Exact version match
 1.0.\* | 1.0.0, 1.0.1 | 1.1.0, 2.0.0,<br />1.0.0-prerelease | Excludes pre-releases
