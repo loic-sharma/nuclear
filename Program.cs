@@ -25,24 +25,6 @@ namespace Nuclear
             });
 
             await app.RunAsync(args);
-
-            // await AnsiConsole.Progress()
-            //     .StartAsync(async ctx => 
-            //     {
-            //         // Define tasks
-            //         var task1 = ctx.AddTask("Discovering packages");
-            //         var task2 = ctx.AddTask("Deleting packages");
-
-            //         while (!ctx.IsFinished) 
-            //         {
-            //             await Task.Delay(TimeSpan.FromSeconds(0.1));
-
-            //             task1.Increment(5);
-            //             task2.Increment(2);
-            //         }
-            //     });
-
-            // AnsiConsole.Markup("[bold green]Done![/]");
         }
     }
 }
