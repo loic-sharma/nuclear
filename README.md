@@ -36,11 +36,11 @@ This [unlists](https://docs.microsoft.com/nuget/nuget-org/policies/deleting-pack
 
 You can create API keys on nuget.org using [this documentation](https://docs.microsoft.com/nuget/nuget-org/publish-a-package#create-api-keys). Make sure to select the `Unlist package` scope when creating your API key.
 
-## Reference
+## Concepts
 
 ### Deleting vs unlisting
 
-NuGet servers are free to interpret "delete" operations. For example, [nuget.org unlists packages](https://docs.microsoft.com/nuget/nuget-org/policies/deleting-packages) to prevent the ["left-pad problem"](https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm). Unlisted packages are undiscoverable on nuget.org and may be re-listed in the future.
+NuGet servers are free to interpret "delete" operations. For example, [nuget.org unlists packages](https://docs.microsoft.com/nuget/nuget-org/policies/deleting-packages) to prevent the ["left-pad problem"](https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm). Unlisted packages are undiscoverable on nuget.org and can be re-listed in the future.
 
 However, private NuGet servers like [BaGet can be configured to delete packages](https://loic-sharma.github.io/BaGet/configuration/#enable-package-hard-deletions). You may not be able to undo a package deletion, so be careful!
 
@@ -59,9 +59,9 @@ Notation | Accepted | Rejected | Notes
 1.0.0-\* | 1.0.0-alpha, 1.0.0-beta | 1.0.0 | Excludes stable releases
 \*-\* | 1.0.0-alpha, 3.4.5-beta | 1.0.0 | Matches all pre-release versions
 
-### Commands
+## Reference
 
-#### nuclear list
+### nuclear list
 
 Find package versions. Usage:
 
@@ -79,7 +79,7 @@ Options:
 * `-s, --source` - The NuGet package source URL. Defaults to `https://api.nuget.org/v3/index.json`.
 * `-o, --output` - Set the output format. Allowed values are Allowed values are `tty`, or `json`.
 
-#### nuclear delete
+### nuclear delete
 
 Delete package versions. Usage:
 
