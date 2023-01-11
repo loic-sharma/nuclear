@@ -63,15 +63,19 @@ namespace Nuclear
                 packages = packages.Where(p => settings.VersionRange.Includes(p.Identity.Version));
             }
 
-            var results = packages.Select(package => new
-            {
-                Id = package.Identity.Id,
-                Version = package.Identity.Version.ToNormalizedString(),
-                IsListed = package.IsListed
-            });
+            var results = packages
+              .Select(package => new
+              {
+                  Id = package.Identity.Id,
+                  Version = package.Identity.Version.ToNormalizedString(),
+                  IsListed = package.IsListed
+              })
+              .ToList();
 
             if (settings.Output == Output.Tty)
             {
+                AnsiConsole.MarkupLine($"Found [green]{results.Count}[/] results.");
+
                 var table = new Table();
 
                 table.AddColumn("Package Id");

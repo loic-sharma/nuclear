@@ -21,7 +21,8 @@ namespace Nuclear
                     .WithExample(new[] { "delete", "my.package", "1.0.0" })
                     .WithExample(new[] { "delete", "my.package", "1.1.*" })
                     .WithExample(new[] { "delete", "my.package", "2.0.0-*" })
-                    .WithExample(new[] { "delete", "my.package", "3.*-*" });
+                    .WithExample(new[] { "delete", "my.package", "3.*-*" })
+                    .WithExample(new[] { "delete", "my.package", "*-*" });
             });
 
             await app.RunAsync(args);

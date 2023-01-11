@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>nuclear</ToolCommandName>
@@ -15,7 +15,7 @@
     <PackageTags>nuget; baget</PackageTags>
 
     <Authors>Loic Sharma</Authors>
-    <Copyright>Copyright (c) Loic Sharma 2021</Copyright>
+    <Copyright>Copyright (c) Loic Sharma 2023</Copyright>
     <Description>Nuclear - bulk delete your NuGet packages!</Description>
 
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
