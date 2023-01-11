@@ -6,7 +6,7 @@ on:
       packageVersion:
         description: 'Package version'
         required: true
-        default: '1.0.0-preview1'
+        default: '1.0.0-preview2'
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
     - name: Build

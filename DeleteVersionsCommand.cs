@@ -87,9 +87,8 @@ namespace Nuclear
                         var packageVersion = package.Identity.Version.ToNormalizedString();
 
                         AnsiConsole.MarkupLine(
-                          $"Deleting package [green]{packageId} {packageVersion}[/]" +
-                          (pending.Count > 1 ? $" [grey]({i + 1}/{pending.Count})[/]" : "") +
-                          "...");
+                          $"Deleting package [green]{packageId} {packageVersion}[/]..." +
+                          (pending.Count > 1 ? $" [grey]({i + 1}/{pending.Count})[/]" : ""));
 
                         if (!settings.DryRun)
                         {
