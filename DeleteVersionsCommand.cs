@@ -80,12 +80,15 @@ namespace Nuclear
                 {
                     var task = ctx.AddTask("Deleting packages");
 
-                    foreach (var package in pending)
+                    for (var i = 0; i < pending.Count; i++)
                     {
+                        var package = pending[i];
                         var packageId = package.Identity.Id;
                         var packageVersion = package.Identity.Version.ToNormalizedString();
 
-                        AnsiConsole.MarkupLine($"Deleting package [green]{packageId} {packageVersion}[/]...");
+                        AnsiConsole.MarkupLine(
+                          $"Deleting package [green]{packageId} {packageVersion}[/]..." +
+                          (pending.Count > 1 ? $" [grey]({i + 1}/{pending.Count})[/]" : ""));
 
                         if (!settings.DryRun)
                         {
